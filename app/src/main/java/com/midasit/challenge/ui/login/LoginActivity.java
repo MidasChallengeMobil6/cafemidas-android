@@ -1,56 +1,37 @@
 package com.midasit.challenge.ui.login;
 
-
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.midasit.challenge.application.ApplicationController;
 import com.midasit.challenge.R;
+import com.midasit.challenge.application.ApplicationController;
 import com.midasit.challenge.model.LoginRequestObject;
 import com.midasit.challenge.model.LoginResponseObject;
-import com.midasit.challenge.ui.main.MainActivity;
+import com.midasit.challenge.ui.admin.MainActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class LoginFragment extends Fragment {
+public class LoginActivity extends AppCompatActivity {
 
     private TextInputLayout mTextInputUsername;
     private TextInputLayout mTextInputPassword;
 
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_login);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        Button loginButton = view.findViewById(R.id.login_button);
-        mTextInputUsername = view.findViewById(R.id.text_input_username);
-        mTextInputPassword = view.findViewById(R.id.text_input_password);
+        Button loginButton = findViewById(R.id.login_button);
+        mTextInputUsername = findViewById(R.id.text_input_username);
+        mTextInputPassword = findViewById(R.id.text_input_password);
 
         loginButton.setOnClickListener(v -> {
 
@@ -74,7 +55,7 @@ public class LoginFragment extends Fragment {
                         mTextInputPassword.setError(null);
 
                         //TODO:
-                        startActivity(new Intent(getActivity(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
                         Log.d("AAA", "로그인 성공" + responseObject.token);
                         return;
@@ -85,7 +66,7 @@ public class LoginFragment extends Fragment {
 
                         int code = response.code();
                         if (code == 401) {
-                            Toast.makeText(getContext(), "비밀번호가 틀렸습니다", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "비밀번호가 틀렸습니다", Toast.LENGTH_LONG).show();
                             mTextInputUsername.getEditText().setText("");
                             mTextInputPassword.getEditText().setText("");
                             mTextInputPassword.getEditText().clearFocus();
@@ -102,5 +83,6 @@ public class LoginFragment extends Fragment {
             });
 
         });
+
     }
 }

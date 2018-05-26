@@ -1,4 +1,4 @@
-package com.midasit.challenge.ui.main;
+package com.midasit.challenge.ui.admin;
 
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.midasit.challenge.R;
+import com.midasit.challenge.ui.admin.managemember.ManageMemberFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-        Fragment emptyFragment = new Fragment();
+        Fragment emptyFragment = new ManageMemberFragment();
         fragmentTransaction.replace(R.id.container, emptyFragment);
         fragmentTransaction.commit();
 
@@ -34,13 +35,15 @@ public class MainActivity extends AppCompatActivity {
             = item -> {
         switch (item.getItemId()) {
 
-            case R.id.search:
-                Fragment emptyFragment = new Fragment();
+
+            case R.id.manage:
+                Fragment fragment = new ManageMemberFragment();
                 FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction1.replace(R.id.container, emptyFragment);
+                fragmentTransaction1.replace(R.id.container, fragment);
                 fragmentTransaction1.commit();
                 return true;
         }
+
         return false;
     };
 
