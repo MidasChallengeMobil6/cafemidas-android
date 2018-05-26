@@ -52,7 +52,7 @@
                 android:id="@+id/specice_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="빵"
+                android:text="커피"
                 android:padding="16dp"
                 android:textSize="16dp"
                 android:gravity="right"
