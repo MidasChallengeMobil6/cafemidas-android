@@ -13,7 +13,7 @@ public class ApplicationController extends Application {
 
     private static ApplicationController instance;
 
-    private static String baseUrl = "http://192.168.0.3:8080";
+    private static String baseUrl = "http://192.168.0.56:8080";
 
     private NetworkService networkService;
 

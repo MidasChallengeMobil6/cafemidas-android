@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.login.SignUpAndLoginActivity">
+        <activity android:name=".ui.admin.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,6 +38,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.menu.AdminMenuDetailModifiActivity"></activity>
+        <activity android:name=".ui.login.LoginActivity"></activity>
+        <activity android:name=".ui.admin.managemember.RegisterActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.midasit.challenge.ui.main;
+package com.midasit.challenge.ui.admin;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;

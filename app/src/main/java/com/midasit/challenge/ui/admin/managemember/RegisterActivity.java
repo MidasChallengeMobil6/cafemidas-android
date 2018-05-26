@@ -1,18 +1,14 @@
-package com.midasit.challenge.ui.login;
-
+package com.midasit.challenge.ui.admin.managemember;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -25,11 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SignUpFragment extends Fragment {
+public class RegisterActivity extends AppCompatActivity {
 
     private TextInputLayout mTextInputName;
     private TextInputLayout mTextInputEmail;
@@ -38,26 +30,18 @@ public class SignUpFragment extends Fragment {
     private TextInputLayout mTextInputPasswordConfirm;
     private Button mSignUpButton;
 
-    public SignUpFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sign_up, container, false);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mTextInputName = view.findViewById(R.id.text_input_name);
-        mTextInputEmail = view.findViewById(R.id.text_input_email);
-        mTextInputUsername = view.findViewById(R.id.text_input_username);
-        mTextInputPassword = view.findViewById(R.id.text_input_password);
-        mTextInputPasswordConfirm = view.findViewById(R.id.text_input_password_confirm);
-        mSignUpButton = view.findViewById(R.id.sign_up_button);
+        mTextInputName = findViewById(R.id.text_input_name);
+        mTextInputEmail = findViewById(R.id.text_input_email);
+        mTextInputUsername = findViewById(R.id.text_input_username);
+        mTextInputPassword = findViewById(R.id.text_input_password);
+        mTextInputPasswordConfirm = findViewById(R.id.text_input_password_confirm);
+        mSignUpButton = findViewById(R.id.sign_up_button);
 
         TextInputEditText NameEditText = (TextInputEditText) mTextInputName.getEditText();
         TextInputEditText emailEditText = (TextInputEditText) mTextInputEmail.getEditText();
@@ -72,7 +56,6 @@ public class SignUpFragment extends Fragment {
         passwordConfirmEditText.addTextChangedListener(passwordConfirmWatcher);
 
         mSignUpButton.setOnClickListener(confirmInputs);
-
     }
 
     View.OnClickListener confirmInputs = new View.OnClickListener() {
@@ -94,14 +77,14 @@ public class SignUpFragment extends Fragment {
                 @Override
                 public void onResponse(Call<SignUpResponseObject> call, Response<SignUpResponseObject> response) {
                     if(response.body().err == 1){
-                        Toast.makeText(getContext(), "아이디가 이미 존재합니다", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "아이디가 이미 존재합니다", Toast.LENGTH_LONG).show();
                         mTextInputUsername.getEditText().setText("");
                         mTextInputUsername.getEditText().requestFocus();
                         Log.d("AAA", "에러" +response.body().toString());
                         return;
                     }
                     else {
-                        Toast.makeText(getContext(), "회원가입 되셨습니다", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "회원가입 되셨습니다", Toast.LENGTH_LONG).show();
                         mTextInputName.getEditText().setText("");
                         mTextInputEmail.getEditText().setText("");
                         mTextInputUsername.getEditText().setText("");
@@ -115,7 +98,7 @@ public class SignUpFragment extends Fragment {
                         mTextInputPasswordConfirm.setError(null);
 
                         //TODO: 다른 방법 생각해 볼 것. 탭 레이아웃으로 전환하는 거 생각해보기
-                        startActivity(new Intent(getActivity(), SignUpAndLoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), SignUpAndLoginActivity.class));
 
                         Log.d("AAA", "에러" +response.body().toString());
                         return;

@@ -7,6 +7,16 @@
     android:padding="32dp"
     tools:context=".ui.login.LoginFragment">
 
+    <TextView
+        android:text="cafe midas"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"/>
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
