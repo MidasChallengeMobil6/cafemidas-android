@@ -41,7 +41,7 @@ public class AdminMenuDetailActivity extends AppCompatActivity implements Button
         name = (TextView)findViewById(R.id.name_tv);
         des = (TextView)findViewById(R.id.description_cafe_text);
         img = (ImageView)findViewById(R.id.image_img);
-
+        price = (TextView)findViewById(R.id.price_tv);
 
     }
 
@@ -54,6 +54,12 @@ public class AdminMenuDetailActivity extends AppCompatActivity implements Button
                 break;
             case R.id.modification_btn:
                 Intent intent = new Intent(getApplicationContext(), AdminMenuDetailModifiActivity.class);
+                intent.putExtra(AdminMenuDetailModifiActivity.NAME, name.getText().toString());
+                intent.putExtra(AdminMenuDetailModifiActivity.DESCRIPTION, des.getText().toString());
+               // BitmapDrawable bitmapDrawable = (BitmapDrawable)img.getDrawable();
+               // Bitmap b = bitmapDrawable.getBitmap();
+               // intent.putExtra(AdminMenuDetailModifiActivity.RESID, (Bitmap)b);
+                intent.putExtra(AdminMenuDetailModifiActivity.PRICE, price.getText().toString());
                 startActivity(intent);
                 break;
         }

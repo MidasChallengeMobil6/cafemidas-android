@@ -26,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
         Fragment emptyFragment = new ManageMemberFragment();
         fragmentTransaction.replace(R.id.container, emptyFragment);
         fragmentTransaction.commit();
-
-
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

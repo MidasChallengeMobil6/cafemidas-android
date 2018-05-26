@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
                         mTextInputPasswordConfirm.setError(null);
 
                         //TODO: 다른 방법 생각해 볼 것. 탭 레이아웃으로 전환하는 거 생각해보기
-                        startActivity(new Intent(getApplicationContext(), SignUpAndLoginActivity.class));
+                        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
 
                         Log.d("AAA", "에러" +response.body().toString());
                         return;

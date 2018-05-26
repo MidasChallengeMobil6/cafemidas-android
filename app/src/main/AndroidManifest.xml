@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.login.SignUpAndLoginActivity">
+
         <activity android:name=".ui.admin.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity" />
         <activity
             android:name=".ui.menu.AdminMenuDetailActivity"
-            android:parentActivityName=".ui.main.MainActivity">
+            android:parentActivityName=".ui.admin.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.main.MainActivity" />
+                android:value=".ui.admin.MainActivity" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.menu.AdminMenuDetailModifiActivity"></activity>
+        <activity android:name=".ui.menu.AdminMenuDetailModifiActivity"
+            android:parentActivityName=".ui.menu.AdminMenuDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.menu.AdminMenuDetailActivity"/>
+        </activity>
         <activity android:name=".ui.login.LoginActivity"></activity>
         <activity android:name=".ui.admin.managemember.RegisterActivity"></activity>
     </application>
