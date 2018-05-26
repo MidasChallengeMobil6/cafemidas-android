@@ -1,4 +1,4 @@
-package com.midasit.challenge.ui.member.menu;
+package com.midasit.challenge.ui.member.menu.menu;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
