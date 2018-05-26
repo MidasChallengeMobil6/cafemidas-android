@@ -24,7 +24,8 @@ public class PurchaseFormFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_purchase_form, container, false);
+        View view = (View)inflater.inflate(R.layout.fragment_purchase_form, container, false);
+        return view;
     }
 
 }
