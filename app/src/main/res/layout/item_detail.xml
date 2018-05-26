@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="?attr/actionBarSize"
+    >
+
+    <ImageView
+        android:id="@+id/image_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/americano"
+        />
+
+    <TextView
+        android:id="@+id/name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아메리카노"
+        android:padding="16dp"
+        android:textSize="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:padding="16dp">
+
+        <RatingBar
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:progressTint="@color/ratingyellow"
+            android:rating="5"
+            android:secondaryProgressTint="@color/ratingsecondarygray"
+            android:stepSize="0.1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/price_tv"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:text="8000원"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_cafe_text"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:text="맛있는 아메리카노~"
+        android:padding="16dp"/>
+</LinearLayout>
