@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/like"
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        android:icon="@drawable/delete"
+        android:title="삭제"
+        android:contentDescription="삭제"/>
+    <item android:id="@+id/upload"
+        android:orderInCategory="2"
+        app:showAsAction="always"
+        android:icon="@drawable/modification"
+        android:title="수정"
+        android:contentDescription="수정"/>
+
+</menu>

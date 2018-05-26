@@ -22,4 +22,11 @@
     <color name="warm_grey">#757575</color>
     <color name="search_background">#f5f4f9</color>
 
+
+
+    <color name="review_background">#EEEEEE</color>
+    <color name="ratingyellow">#FFFF00</color>
+    <color name="ratingsecondarygray">#CCCCCC</color>
+    <color name="floatingpink">#FF007F</color>
+
 </resources>
